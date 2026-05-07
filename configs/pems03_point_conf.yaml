@@ -1,0 +1,43 @@
+dataset_name: "PeMS03"
+missing_pattern: "point"         # ["point","block","sparse"]
+target_strategy: "random"        # ["random","block","hybrid"]
+
+min_seq: 12
+max_seq: 48                      # 12 * 4
+seed: 42
+
+train_ratio: 0.7
+val_ratio: 0.1
+eval_length: 24                  # 窗口长度(时间步)
+is_interpolate: true
+nsample: 100
+
+epochs: 300
+valid_epoch_interval: 10
+lr: 0.001
+is_lr_decay: true
+device_id: "1"
+mode: "train"   # 可选: "train" 或 "test"
+modelfolder: ""               # 为空表示从头训
+batch_size: 8
+num_workers: 16
+
+dropout: 0.0
+layers: 4
+nodes: 358
+channels: 64
+nheads: 8
+diffusion_embedding_dim: 128
+beta_start: 0.0001
+beta_end: 0.2
+num_steps: 50
+schedule: "quad"
+is_adp: true
+proj_t: 64
+is_cross_t: true
+is_cross_s: true
+
+is_unconditional: 0
+timeemb: 128
+featureemb: 16
+use_guide: true
